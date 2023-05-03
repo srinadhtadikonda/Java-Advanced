@@ -1,30 +1,33 @@
 import java.io.*;
 import java.sql.*;
-
+import java.util.*;
 class Test33
 {
 	public static void main(String[] args) {
 		System.out.println("Insert records example using prepared statement!");
 		Connection con = null;
 		try{
-			Class.forName("com.mysql.jdbc.Driver");
-			con = DriverManager.getConnection("jdbc:mysql://localhost:3306/demobase","root","brilliant");
+	Class.forName("com.mysql.jdbc.Driver");
+	con = DriverManager.getConnection("jdbc:mysql://localhost:3306/demobase","root","brilliant");
 			try{
 				String sql = "INSERT into myemp VALUES(?,?,?,?)";
 				PreparedStatement prest = con.prepareStatement(sql);
-				BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
-				System.out.print("Enter eno:");
-				int eno = Integer.parseInt(bf.readLine());
+				Scanner SC=new Scanner(System.in);
+
+				System.out.print("Enter eno..:");
+				int eno =SC.nextInt();
 				prest.setInt(1, eno);
-				System.out.print("Enter ename");
-				String ename=bf.readLine();
+
+				System.out.print("Enter ename...:");
+				String ename=SC.next();
 				prest.setString(2, ename);
 
 				System.out.print("Enter esal");
-				int esal = Integer.parseInt(bf.readLine());
+				int esal =SC.nextInt();
 				prest.setInt(3, esal);	
+
 				System.out.print("Enter egrade");
-				String egrade=bf.readLine();
+				String egrade=SC.next();
 				prest.setString(4,egrade);
 		
 				int count = prest.executeUpdate();

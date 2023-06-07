@@ -1,5 +1,5 @@
 import java.util.ArrayList;
-public class Test06
+public class ArrayListExample7
 {
 ArrayList<String>AT=new ArrayList<String>();
 AT.add("d");

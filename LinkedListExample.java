@@ -1,5 +1,6 @@
 import java.util.*;
-class Test07
+class LinkedListExample
+  
 {
 public static void main(String args[])
 {

@@ -1,5 +1,5 @@
 import java.util.*;
-class Test09
+class StackExample
 {
 public static void main(String args[])
 {

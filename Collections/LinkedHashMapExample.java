@@ -1,8 +1,9 @@
 import java.util.*;
-public class  Test19
+public class  Test2
  {
-        public static void main(String args[]) {
-                LinkedHashMap hm = new LinkedHashMap();
+        public static void main(String args[]) 
+{
+            LinkedHashMap<Integer,String> hm = new LinkedHashMap<Integer,String>();
                 hm.put(1, "Gyan");
                 hm.put(2, "Ankit");
                 hm.put(3, "Arun");

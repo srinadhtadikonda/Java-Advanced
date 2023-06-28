@@ -1,5 +1,5 @@
 import java.util.ArrayList;
-public class ArrayListExample2
+public class Test
 {
 public static void main(String args[])
 {
@@ -37,5 +37,8 @@ System.out.println(AT.size());
 AT.clear();
 System.out.println(AT);
 System.out.println(AT.size());
+AT.add("UNCLE");
+AT.add("AUNT");
+AT.removeAll(AT);
 }
 }

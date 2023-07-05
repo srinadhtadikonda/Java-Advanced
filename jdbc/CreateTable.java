@@ -2,7 +2,7 @@
 
 import java.sql.*;
 
-class 
+class CreateTable
 {
 public static void main(String args[])
 {

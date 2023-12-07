@@ -12,9 +12,9 @@ AT.add("BASKET");
 AT.add("APPLE");
 AT.add("RAT");
 AT.add("BALL");
-for(String x:AT)
+for(i=0;i<5;i++)
 {
-System.out.print(x+"\t");
+System.out.print(i+"\t");
 }
 }
 }

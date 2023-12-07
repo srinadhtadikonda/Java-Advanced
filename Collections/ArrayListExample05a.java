@@ -1,4 +1,4 @@
-//print elements using foreach loop
+//print elements using for loop
 import java.lang.*;
 import java.util.*;
 class ArrayListExample4

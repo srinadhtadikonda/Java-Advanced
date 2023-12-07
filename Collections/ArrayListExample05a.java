@@ -1,7 +1,7 @@
 //print elements using for loop
 import java.lang.*;
 import java.util.*;
-class ArrayListExample4
+class Test
 {
 public static void main(String args[])
 {
@@ -12,9 +12,9 @@ AT.add("BASKET");
 AT.add("APPLE");
 AT.add("RAT");
 AT.add("BALL");
-for(i=0;i<5;i++)
-{
-System.out.print(i+"\t");
-}
+for (int i = 0; i < AT.size();i++) 
+{ 		      
+    System.out.println(AT.get(i)); 		
+} 
 }
 }

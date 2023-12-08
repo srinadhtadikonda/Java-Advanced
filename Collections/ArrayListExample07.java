@@ -1,9 +1,10 @@
+package demos;
 import java.lang.*;
 import java.util.*;
 class Test
 {
 	public static void main(String args[])
-	{
+			{
 		ArrayList<String>AT=new ArrayList<String>();
 		AT.add("PEN");
 		AT.add("PENCIL");
@@ -11,7 +12,7 @@ class Test
 Iterator<String>iterator=AT.iterator();
 while (iterator.hasNext())
 {
-System.out.println(i);
+System.out.println(iterator.next());
 }
-}  
+	}
 }

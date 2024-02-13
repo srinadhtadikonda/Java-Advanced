@@ -16,7 +16,7 @@ String connectionURL = "jdbc:mysql://localhost:3306/demobase";
 Connection connection = null; 
 
 // Load JBBC driver "com.mysql.jdbc.Driver" 
-Class.forName("com.mysql.jdbc.Driver").newInstance(); 
+Class.forName("com.mysql.cj.jdbc.Driver").newInstance(); 
 
 /* Create a connection by using getConnection() method that takes parameters of 
 string type connection url, user name and password to connect to database. */ 

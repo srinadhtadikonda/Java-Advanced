@@ -1,3 +1,5 @@
+package advjavaprograms;
+
 //program to insert record using Prepared Statement
 
 import java.io.*;
@@ -8,11 +10,9 @@ public class Irs
 public static void main(String[] args) 
 {
 System.out.println("Insert records example using prepared statement!");
-Connection con = null;
 try
 {
-Class.forName("com.mysql.jdbc.Driver");
-con = DriverManager.getConnection("jdbc:mysql://localhost:3306/demobase","root","brilliant");
+Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/demobase","root","12345");
 try{
 String sql = "INSERT into myemp VALUES(?,?,?,?)";
 PreparedStatement prest = con.prepareStatement(sql);

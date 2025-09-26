@@ -1,0 +1,47 @@
+DELIMITER $$
+
+CREATE PROCEDURE get_employee(IN empno INT)
+BEGIN
+    SELECT eno, ename, esal, egrade
+    FROM myemp
+    WHERE eno = empno;
+END $$
+
+DELIMITER;
+
+
+
+import java.sql.*;
+
+public class CallableProcedureExample {
+    public static void main(String[] args) {
+        String url = "jdbc:mysql://localhost:3306/demobase";
+        String user = "root";
+        String password = "12345";
+
+        try (Connection con = DriverManager.getConnection(url, user, password)) {
+            // Callable statement for stored procedure
+            CallableStatement cstmt = con.prepareCall("{call get_employee(?)}");
+
+            // Set input parameter
+            cstmt.setInt(1, 101);
+
+            // Execute
+            ResultSet rs = cstmt.executeQuery();
+
+            // Display result
+            while (rs.next()) {
+                System.out.println(rs.getInt("eno") + "  "
+                        + rs.getString("ename") + "  "
+                        + rs.getDouble("esal") + "  "
+                        + rs.getString("egrade"));
+            }
+
+            rs.close();
+            cstmt.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+}
+

@@ -1,0 +1,61 @@
+
+
+DELIMITER $$
+
+CREATE FUNCTION total_salary()
+RETURNS DOUBLE
+DETERMINISTIC
+BEGIN
+    DECLARE total DOUBLE;
+    SELECT SUM(esal) INTO total FROM myemp;
+    RETURN total;
+END $$
+
+DELIMITER ;
+
+
+
+package advjavaprograms;
+import java.sql.*;
+
+public class LirstRecord 
+{
+    public static void main(String[] args) {
+        // DB connection details
+        String url = "jdbc:mysql://localhost:3306/demobase";
+        String user = "root";
+        String password = "12345";
+
+        Connection con = null;
+        CallableStatement cstmt = null;
+
+        try {
+            // Load MySQL Driver (optional for newer versions)
+            Class.forName("com.mysql.cj.jdbc.Driver");
+
+            // Establish connection
+            con = DriverManager.getConnection(url, user, password);
+
+            // Callable statement for function (note ? = return value)
+            cstmt = con.prepareCall("{? = call total_salary()}");
+
+            // Register return parameter (index 1)
+            cstmt.registerOutParameter(1, Types.DOUBLE);
+
+            // Execute function
+            cstmt.execute();
+
+            // Get the result
+            double totalSalary = cstmt.getDouble(1);
+
+            // Display result
+            System.out.println("Total Salary of Employees: " + totalSalary);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            try { if (cstmt != null) cstmt.close(); } catch (Exception e) {}
+            try { if (con != null) con.close(); } catch (Exception e) {}
+        }
+    }
+}

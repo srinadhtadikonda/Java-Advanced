@@ -13,7 +13,7 @@ public class PriorityQueueDemo {
 
         System.out.println("Priority Queue: " + pq);
 
-        System.out.println("Peek: " + pq.peek());
+        System.out.println("Peek: " + pq.peek()); //peek() returns highest priority element
         }
     }
 }

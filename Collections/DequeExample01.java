@@ -1,26 +1,27 @@
-Deque as a Queue (FIFO)
-import java.util.ArrayDeque;
 import java.util.Deque;
+import java.util.ArrayDeque;
 
-public class DequeQueueExample {
-
+public class DequeExample {
     public static void main(String[] args) {
 
-        Deque<Integer> dq = new ArrayDeque<>();
+        Deque<String> deque = new ArrayDeque<>();
 
-        dq.offerLast(10);
-        dq.offerLast(20);
-        dq.offerLast(30);
+        // Add elements
+        deque.addFirst("Apple");
+        deque.addLast("Banana");
+        deque.offerFirst("Mango");
+        deque.offerLast("Orange");
 
-        System.out.println("Queue: " + dq);
+        System.out.println(deque);
 
-        System.out.println("Removed: " + dq.pollFirst());
-        System.out.println("Front: " + dq.peekFirst());
+        // Access elements
+        System.out.println("First: " + deque.peekFirst());
+        System.out.println("Last: " + deque.peekLast());
+
+        // Remove elements
+        System.out.println("Removed First: " + deque.pollFirst());
+        System.out.println("Removed Last: " + deque.pollLast());
+
+        System.out.println(deque);
     }
 }
-
-Output
-Queue: [10, 20, 30]
-Removed: 10
-Front: 20
-

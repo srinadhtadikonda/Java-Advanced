@@ -1,14 +1,14 @@
 import java.util.ArrayDeque;
 import java.util.Deque;
 
-public class DequeAddExample {
+public class Main {
     public static void main(String[] args) {
 
-        Deque<Integer> deque = new ArrayDeque<>();
+        Deque<String> deque = new ArrayDeque<String>();
 
-        deque.add(10);
-        deque.add(20);
-        deque.add(30);
+        deque.add("PEN");
+        deque.add("BOOK");
+        deque.add("ERASER");
 
         System.out.println(deque);
     }

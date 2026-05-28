@@ -25,3 +25,7 @@ public class DequeExample {
         System.out.println(deque);
     }
 }
+
+
+offerFirst() is a method in Java Deque that inserts an element at the front (head) of the deque.
+offerLast() is a method in Java Deque used to insert an element at the rear (tail/end) of the deque.   
